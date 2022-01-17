@@ -1,25 +1,28 @@
 # Final project --Kolo
 
 
-(#Live Link)
+# Live Link
  https://flamboyant-franklin-6c1e4d.netlify.app/ 
 
 # Contract
-## npm install
-## run test using `npx hardhat run test/sample-test.js`
+1. clone the repo
+2. npm install
+3. run test using `npx hardhat run test/sample-test.js`
 
 # Frontend 
+1. clone the repo
+2. `cd client`
+3.`npm install`
+4.`npm start`
+5. `open` port `http://localhost:3000/`
 
-### `cd client`
-### `npm install`
-### `npm start`
-### `open` port `http://localhost:3000/`
+# Public ethereum address for NFT CERTIFICATION: 0x5F8577BE43Fa17B4a6CF65b54Fd57273873Da8b7
 
 # Project description
 
-### You can create a kolo(piggy bank) where you can save money and deposit and can withdraw 
-### at a time specified by you. Until that period is reached money cannot be withdrawed 
-### from the kolo, and only the owner can withdraw fron the kolo
+#### You can create a kolo(piggy bank) where you can save money and deposit and can withdraw 
+#### at a time specified by you. Until that period is reached money cannot be withdrawed 
+#### from the kolo, and only the owner can withdraw fron the kolo
 
 
 # Simple workflow
