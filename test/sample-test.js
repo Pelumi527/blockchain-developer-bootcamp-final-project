@@ -60,7 +60,7 @@ describe("Kolo", function () {
 
   it("cannot deposit when withdrawal has been made", async function () {
     const create = await kolo.connect(owner).createKolo(1642405164) 
-    console.log("get the current unixtimestamp for testing")
+    console.log("Please get the current unixtimestamp for testing")
     await create.wait()
 
     const deposit = await kolo.connect(addr1).depositToKolo(1,{value:ethers.utils.parseEther("0.01")})
