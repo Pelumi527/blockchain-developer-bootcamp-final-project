@@ -65,7 +65,7 @@ function App() {
 			
 			try {
 			
-				const THEONFT = new web3.eth.Contract(Kolo.abi, "0x7e2383a4d115417dEaD83fFf9044845Ad688ee70")
+				const THEONFT = new web3.eth.Contract(Kolo.abi, "0x5949a4F6c3124cA105a8ce08f8309F28Ee4A55E3")
 				setNftContract(THEONFT)				
 
 			} catch (error) {
