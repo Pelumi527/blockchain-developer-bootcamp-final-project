@@ -32,8 +32,9 @@ function App() {
 	const [message, setMessage] = useState(null)
 
 	
-	const [status, setstatus] = useState(false);
+	const [status, setstatus] = useState(null);
 	const [smShow, setSmShow] = useState(false);
+	const [smShow2, setSmShow2] = useState(false);
 	const [koloDuration, setKoloDuration] = useState("0")
   	const [koloID, setKoloID] = useState("");
 	
@@ -123,6 +124,8 @@ function App() {
 				setSmShow(true)
 				const create = await nftContract.methods.createKolo(koloDuration).send({from:account})
 				setSmShow(false)
+				setstatus("kolo created successfully")
+				setSmShow2(true)
 				nftContract.events.KoloCreated({
 					filter: {myIndexedParam: [20,23], myOtherIndexedParam: '0x123456789...'}, // Using an array means OR: e.g. 20 or 23
 					fromBlock: 0
@@ -146,7 +149,13 @@ function App() {
 
 	const depositToKolo = async () => {
 		if (nftContract){
-			const deposit = await nftContract.methods.depositToKolo(koloID).send({from:account, value:web3.utils.toWei("0.001", "ether")})
+			try {
+				const deposit = await nftContract.methods.depositToKolo(koloID).send({from:account, value:web3.utils.toWei("0.001", "ether")})
+				setstatus("deposit successfull")
+				setSmShow2(true)
+			} catch (error) {
+				
+			}
 		}
 	}
 
@@ -155,6 +164,8 @@ function App() {
 			try {
 				console.log(koloID)
 				await nftContract.methods.withdraw(koloID).send({from: account})
+				setstatus("withdraw successfull")
+				setSmShow2(true)
 			} catch (error) {
 				console.log(error)
 			}
@@ -184,13 +195,7 @@ function App() {
 
 	return (
 		<div>
-			{/* <div className='header-top'>
-				<div className="split-content header-left">
-					<a href="https://garvenlabs.xyz/" className="brand-logo w-nav-brand">
-						<div className="div-block-2"><img src={logo} alt="astrogems logo" className="header-logo laptop mobile"/></div>
-					</a>
-				</div>
-			</div> */}
+			
 			<div className="container-header home-header">
 				<div className="split-content header-left tablet">
 					{/* <a href="https://garvenlabs.xyz/" className="brand-logo w-nav-brand">
@@ -222,6 +227,19 @@ function App() {
 				<Modal.Header closeButton>
 				<Modal.Title id="example-modal-sizes-title-sm">
 					Creating your Kolo
+				</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>...</Modal.Body>
+			</Modal>
+			<Modal
+				size="sm"
+				show={smShow2}
+				onHide={() => setSmShow2(false)}
+				aria-labelledby="example-modal-sizes-title-sm"
+			>
+				<Modal.Header closeButton>
+				<Modal.Title id="example-modal-sizes-title-sm">
+					{status}
 				</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>...</Modal.Body>
