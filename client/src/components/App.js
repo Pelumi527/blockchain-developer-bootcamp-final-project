@@ -34,8 +34,6 @@ function App() {
 	
 	const [status, setstatus] = useState(false);
 	const [smShow, setSmShow] = useState(false);
-	const [smShow2, setSmShow2] = useState(false);
-	const [smShow3, setSmShow3] = useState(false);
 	const [koloDuration, setKoloDuration] = useState("0")
   	const [koloID, setKoloID] = useState("");
 	
@@ -186,18 +184,18 @@ function App() {
 
 	return (
 		<div>
-			<div className='header-top'>
+			{/* <div className='header-top'>
 				<div className="split-content header-left">
 					<a href="https://garvenlabs.xyz/" className="brand-logo w-nav-brand">
 						<div className="div-block-2"><img src={logo} alt="astrogems logo" className="header-logo laptop mobile"/></div>
 					</a>
 				</div>
-			</div>
+			</div> */}
 			<div className="container-header home-header">
 				<div className="split-content header-left tablet">
-					<a href="https://garvenlabs.xyz/" className="brand-logo w-nav-brand">
+					{/* <a href="https://garvenlabs.xyz/" className="brand-logo w-nav-brand">
 						<div className="div-block-2"><img src={logo} alt="astrogems logo" className="header-logo"/></div>
-					</a>
+					</a> */}
 				</div>
         		
         		<div className="div-block-4">
@@ -228,36 +226,6 @@ function App() {
 				</Modal.Header>
 				<Modal.Body>...</Modal.Body>
 			</Modal>
-			{/*<Modal
-				size="sm"
-				show={smShow2}
-				onHide={() => setSmShow2(false)}
-				aria-labelledby="example-modal-sizes-title-sm"
-			>
-				<Modal.Header closeButton>
-				<Modal.Title id="example-modal-sizes-title-sm">
-						
-				<Spinner animation="border" role="status">
-  					<span className="visually-hidden"></span>
-				</Spinner>
-				Minting....
-				</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>...</Modal.Body>
-			</Modal>
-			<Modal
-				size="sm"
-				show={smShow3}
-				onHide={() => setSmShow3(false)}
-				aria-labelledby="example-modal-sizes-title-sm"
-			>
-				<Modal.Header closeButton>
-				<Modal.Title id="example-modal-sizes-title-sm">
-						<p className='text-success'>Minting succesful</p>
-				</Modal.Title>
-				</Modal.Header>
-				<Modal.Body>...</Modal.Body>
-			</Modal> */}
 				<Row className='mint-div'>
 					<MDBAnimation  reveal type="fadeInRight" duration="3s">
 					<Col md={12} lg={12} sm={12}>
@@ -271,7 +239,7 @@ function App() {
 							
 							<div>
 								{account ? <button onClick={createKolo} className="mint-button"><span>{`CreateKolo`}</span></button>:<button onClick={web3Handler} className="header-btn"> Connect MetaMask</button>}
-								{message ? <p>{`Your KoloId is ${message}`}</p>:<p></p>}
+								{message && account ? <p>{`Your KoloId is ${message}`}</p>:<p></p>}
 							</div>
 						</div>
 					</Col>
@@ -294,16 +262,13 @@ function App() {
 						<form id="wf-form-Mint-Quantity" name="wf-form-Mint-Quantity" data-name="Mint Quantity" method="get">
 							<input type="number" placeholder="1" onChange={handleOnKoloID}></input>
 						</form>
-						<p>Input the Kolo ID</p>
-					</div>
-					<button
+						<p>Already have a Kolo? Input the Kolo ID</p>
+						<button
 						onClick={depositToKolo}>Deposit</button>
-					<button
+						<button
 						onClick={withdrawFromKolo}
 						>withdraw</button>
-					<button
-						onClick={viewMyKolo}
-						>View Your Kolo</button>
+					</div>
 				</div>
 				<footer className='footer'>
 				<div className="container-default">

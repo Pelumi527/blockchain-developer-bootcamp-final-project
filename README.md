@@ -1,6 +1,9 @@
 # Final project --Kolo
 
 
+(#Live Link)
+ https://flamboyant-franklin-6c1e4d.netlify.app/ 
+
 # Contract
 ## npm install
 ## run test using `npx hardhat run test/sample-test.js`
@@ -27,3 +30,5 @@
 ## for already created kolo enter you kolo Id
 ##
 
+# screencast link
+https://www.loom.com/share/ee7a952e2ad44137b402f2d9654a41b9

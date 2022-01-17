@@ -174,7 +174,10 @@ a:hover {
   }
 
   .w-form {
-    margin: 0 0 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   input[type=number] {
