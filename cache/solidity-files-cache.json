@@ -1,41 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/pelumi/Desktop/WorkFolder/kolo/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1641660526444,
-      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
-      "sourceName": "hardhat/console.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.22 <0.9.0"
-      ],
-      "artifacts": [
-        "console"
-      ]
-    },
     "/home/pelumi/Desktop/WorkFolder/kolo/contracts/Kolo.sol": {
       "lastModificationDate": 1642367782268,
       "contentHash": "bb1ce5a0eab719e50c669718cf363370",
@@ -73,8 +38,46 @@
         "KoloContract"
       ]
     },
-    "/home/pelumi/Desktop/WorkFolder/kolo/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1641662260623,
+    "/home/pelumi/Desktop/WorkFolder/blockchain-developer-bootcamp-final-project/contracts/Kolo.sol": {
+      "lastModificationDate": 1642404947317,
+      "contentHash": "6a2a30aeeeee09b3e221ecdf2f27f8a0",
+      "sourceName": "contracts/Kolo.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/Context.sol",
+        "@openzeppelin/contracts/security/ReentrancyGuard.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "KoloContract"
+      ]
+    },
+    "/home/pelumi/Desktop/WorkFolder/blockchain-developer-bootcamp-final-project/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1642401584974,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -106,6 +109,41 @@
       ],
       "artifacts": [
         "Context"
+      ]
+    },
+    "/home/pelumi/Desktop/WorkFolder/blockchain-developer-bootcamp-final-project/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+      "lastModificationDate": 1642401587515,
+      "contentHash": "92f9448b23a90ea3bb932ee55cc3ccce",
+      "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
       ]
     }
   }

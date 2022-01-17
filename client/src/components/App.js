@@ -121,7 +121,7 @@ function App() {
 		if (nftContract){
 			try {
 				setSmShow(true)
-				const create = await nftContract.methods.createKolo(koloDuration).send({from:account, value: web3.utils.toWei("0.001", "ether")})
+				const create = await nftContract.methods.createKolo(koloDuration).send({from:account})
 				setSmShow(false)
 				nftContract.events.KoloCreated({
 					filter: {myIndexedParam: [20,23], myOtherIndexedParam: '0x123456789...'}, // Using an array means OR: e.g. 20 or 23
